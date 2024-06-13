@@ -2,16 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import '../styles/globles.css';
-
-let pageTitle = "About";
-const identity = {
-    firstName: "高黛汐",
-    country: "中国",
-    occupation: "可口可乐充气工",
-    hobbies: ["幻想", "音乐", "睡觉"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing"];
 ---
 
 <Layout title="欢迎来到Astro">
@@ -22,34 +12,12 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing"];
             <a href="/blog/">博客</a>
             <a href="/notes/">笔记</a>
         </nav>
-        <h1>欢迎来到 <span class="text-gradient">{pageTitle}</span></h1>
-        <h2>……和我的新 Astro 网站！</h2>
-        <p>在这个页面，我将展示我的内容。</p>
-        <p>
-            我正在学习 Astro
-            的入门教程。这是我网站上的第二个页面，也是我自己建立的第一页面！
-        </p>
-        <p>
-            随着我完成更多教程，该站点将更新，所以请继续查看我的旅程将如何进行吧！
-        </p>
-        <p>以下是关于我的几个事实：</p>
+        <h1>欢迎来到 <span class="text-gradient">Notes页面</span></h1>
+        <p>在这里，我将分享我的课程笔记。</p>
+        <hr />
         <ul>
-            <li>我的名字是{identity.firstName}.</li>
-            <li>
-                我住在{identity.country}。我的职业是：{identity.occupation}。
-            </li>
-            {
-                identity.hobbies.length >= 2 && (
-                    <li>
-                        我的两个习惯：{identity.hobbies[0]}和
-                        {identity.hobbies[1]}
-                    </li>
-                )
-            }
-        </ul>
-        <p>我的技能是：</p>
-        <ul>
-            {skills.map((skill) => <li>{skill}</li>)}
+            <li><a href="/posts/1/">我的Notes1：Astro的安装及部署</a></li>
+            <li><a href="/posts/1/">我的Notes2：在Astro中创建页面及链接</a></li>
         </ul>
     </main>
 </Layout>
@@ -60,12 +28,15 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing"];
         padding: 1rem;
         width: 800px;
         max-width: calc(100% - 2rem);
-        color: rgb(11, 227, 235);
+        color: rgb(45, 211, 233);
         font-size: 20px;
         line-height: 1.6;
     }
     nav a {
-        color: rgb(219, 22, 22);
+        color: white;
+    }
+    ul li a {
+        color: white;
     }
     .astro-a {
         position: absolute;
@@ -84,12 +55,7 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing"];
         margin-bottom: 1em;
     }
     h2 {
-        /*text-align: center;*/
-    }
-    p {
-        font-size: 18px;
-        text-indent: 2em;
-        color: rgb(189, 113, 192);
+        text-align: center;
     }
     .text-gradient {
         background-image: var(--accent-gradient);
